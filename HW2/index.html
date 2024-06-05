@@ -1,0 +1,66 @@
+<!--
+Brendon So
+
+The form values are not being passed to the JavaScript! Looked all over and restarted twice already.
+ Here is for partial credit I guess, the grid prints correctly but theres not point me going foward due to late and I cant pass values down
+
+grid works for the most part other than doesnt print all the way for larger values
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="JavaScript.js"></script>
+</head>
+<body>
+
+    <div class="main">
+        <form action="">
+            <label for="xs">X value start:</label>
+            <input type="text" id="xs" placeholder="Enter number...">
+
+            <label for="xe">X value  end:</label>
+            <input type="text" id="xe" placeholder="Enter number...">
+
+            <label for="ys">Y value start</label>
+            <input type="text" id="ys" placeholder="Enter number...">
+
+            <label for="ye">Y value end</label>
+            <input type="text" id="ye" placeholder="Enter number...">
+
+            <button type="button" onclick="myFunction()">button</button>
+        </form>
+    </div>
+    <div class="draw">
+        <p id="test"></p>
+        
+        <canvas id="myCanvas"></canvas>
+        <script id="Valid">
+                var n = 10;
+                var c = myCanvas.getContext('2d');
+                var x = 0;
+                var y = 0;
+                var width = 10;
+                var height = 10;
+                var i;
+                var o;
+                let txe = 10;
+                let tye = 4;
+                for (i = 1; i <= txe; i = i + 1) {
+                    for (o = 1; o <= tye; o = o + 1) { //down side
+                        y = o * 25;
+                        x = i * 25; //right
+                        c.strokeStyle = "black";
+                        c.strokeRect(x, y, 25, 25);
+                        c.fillText(i*o, x + 10, y + 15);
+                    }
+                }
+        </script>
+
+    </div>
+</body>
+</html>
+
+
